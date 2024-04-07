@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+</head>
+<body>
+  <h1>Order Summary</h1>
+  <p>Location: <span id="location"></span></p>
+  <p>Check-in Date: <span id="check-in"></span></p>
+  <p>Check-out Date: <span id="check-out"></span></p>
+  <p>Number of Luggages: <span id="luggage"></span></p>
+  <p>Total Price: <span id="total-price"></span></p>
+
+  <script>
+    // Retrieve details from session storage
+    var location = sessionStorage.getItem("location");
+    var checkInDate = sessionStorage.getItem("checkInDate");
+    var checkOutDate = sessionStorage.getItem("checkOutDate");
+    var numLuggages = sessionStorage.getItem("numLuggages");
+    var totalPrice = sessionStorage.getItem("totalPrice");
+
+    // Display details on the page
+    document.getElementById("location").innerText = location;
+    document.getElementById("check-in").innerText = checkInDate;
+    document.getElementById("check-out").innerText = checkOutDate;
+    document.getElementById("luggage").innerText = numLuggages;
+    document.getElementById("total-price").innerText = totalPrice;
+  </script>
+</body>
+</html>

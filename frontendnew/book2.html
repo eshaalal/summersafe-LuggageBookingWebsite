@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Search</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    color: #333;
+  }
+  .search-bar {
+    display: flex;
+    margin-top: 20px;
+  }
+  .search-bar input,
+  .search-bar select,
+  .search-bar button {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .search-bar button {
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .search-bar button:hover {
+    background: darkred;
+  }
+  .luggage-counter {
+    display: flex;
+    align-items: center;
+  }
+  .luggage-counter button {
+    padding: 0 5px;
+  }
+  #reviews {
+    margin-top: 20px;
+    color: #777;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Anywhere, anytime</h1>
+  <div class="search-bar">
+    <select id="location">
+      <option value="paris">Paris</option>
+      <option value="new-york">New York</option>
+      <option value="tokyo">Tokyo</option>
+      <!-- Add more locations as needed -->
+    </select>
+    <input type="date" id="checkin">
+    <input type="date" id="checkout">
+    <div class="luggage-counter">
+      <button onclick="changeLuggage(-1)">-</button>
+      <input type="text" id="luggage" value="2" readonly>
+      <button onclick="changeLuggage(1)">+</button>
+    </div>
+    <button onclick="search()">Search</button>
+  </div>
+  <p id="reviews">Trustpilot 4.5/5 - 19507 reviews</p>
+</div>
+
+<script>
+  function search() {
+    var location = document.getElementById('location').value;
+    var checkin = document.getElementById('checkin').value;
+    var checkout = document.getElementById('checkout').value;
+    var luggage = document.getElementById('luggage').value;
+    alert('Searching for ' + location + ' with ' + luggage + ' bags from ' + checkin + ' to ' + checkout);
+  }
+
+  function changeLuggage(change) {
+    var luggageInput = document.getElementById('luggage');
+    var currentLuggage = parseInt(luggageInput.value);
+    var newLuggage = currentLuggage + change;
+    if (newLuggage >= 0) { // Prevent negative luggage count
+      luggageInput.value = newLuggage;
+    }
+  }
+</script>
+</body>
+</html>
