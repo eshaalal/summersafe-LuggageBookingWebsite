@@ -27,6 +27,9 @@ app.get("/login",(req,res)=>{
 app.get("/register",(req,res)=>{
     res.render("register")
 })
+app.get("/partner",(req,res)=>{
+    res.render("partner")
+})
 app.post("/register",async(req,res)=>{
     try{
         const password=req.body.password;
