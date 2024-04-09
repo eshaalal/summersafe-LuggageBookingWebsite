@@ -30,37 +30,38 @@
         </div>
 
       <div class="booking__container">
-        <form action="/login" method="POST">
-          <div class="form__group">
-            <div class="input__group">
-              <input type="text" id="location "value= "Lovely Professional University" autocomplete="off" />
-              <label for="location"></label>
-            </div>
-            <p>What's your location?</p>
-          </div>
-          <div class="form__group">
-            <div class="input__group">
-              <input type="date" id="check-in" />
-              <label for="check-in"></label>
-            </div>
-            <p>Check-in date</p>
-          </div>
-          <div class="form__group">
-            <div class="input__group">
-              <input type="date" id="check-out" />
-              <label for="check-out"></label>
-            </div>
-            <p>check-out date</p>
-          </div>
-          <div class="form__group">
-            <div class="input__group">
-              <input type="text" id="luggage" value="1"> 
-              <label for="luggage"></label>
-            </div>
-            <p>add-luggage</p>
-          </div>
-        </form>
-        <button class="btn" onclick="bookNow()"><i class="ri-shopping-cart-line"></i> Book Now</button>
+        <form action="/order-summary" method="POST">
+    <div class="form__group">
+        <div class="input__group">
+            <input type="text" id="location" name="location" value="Lovely Professional University" autocomplete="off" />
+            <label for="location"></label>
+        </div>
+        <p>What's your location?</p>
+    </div>
+    <div class="form__group">
+        <div class="input__group">
+            <input type="date" id="check-in" name="checkInDate" />
+            <label for="check-in"></label>
+        </div>
+        <p>Check-in date</p>
+    </div>
+    <div class="form__group">
+        <div class="input__group">
+            <input type="date" id="check-out" name="checkOutDate" />
+            <label for="check-out"></label>
+        </div>
+        <p>Check-out date</p>
+    </div>
+    <div class="form__group">
+        <div class="input__group">
+            <input type="text" id="luggage" name="luggageItems" value="1"> 
+            <label for="luggage"></label>
+        </div>
+        <p>Add luggage</p>
+    </div>
+    <button type="submit" class="btn"><i class="ri-shopping-cart-line"></i> Book Now</button>
+</form>
+
       </div>
         
       
@@ -203,50 +204,11 @@
           <p>Partnerships</p>
         </div>
       </div>
-      <div class="footer__bar">
-        Copyright © 2023 . All rights reserved.                                              
-      </div>
+      {{!-- <div class="footer__bar"> --}}
+        {{!-- Copyright © 2023 . All rights reserved.                                               --}}
+      {{!-- </div> --}}
     </footer>
-    <script>
-      function bookNow() {
-        var allowedLocations = ["Lovely Professional University", "Chitkara University", "Amity University", "Thapar University", "Chandigarh University", "Galgotias University"];
-        var location = document.getElementById("location").value.trim();
-        var checkInDate = document.getElementById("check-in").value;
-        var checkOutDate = document.getElementById("check-out").value;
-        
-        if (allowedLocations.includes(location)) {
-          // Pricing logic based on location, check-in/out dates, and number of luggages
-          var price = calculatePrice(location, checkInDate, checkOutDate);
-          
-          // Display booking confirmation message with amount
-          console.log("Booking confirmed for location: " + location + ". Amount to be paid:  \u20B9" + price);
-          alert("Booking confirmed for location: " + location + ". Amount to be paid:  \u20B9" + price);
     
-          // Remove or comment out the line below to prevent redirection
-          // window.location.href = "order_summary.html"; // Replace "order_summary.html" with the actual URL of your order summary page
-        } else {
-          // Location is not allowed, show error message
-          alert("Please enter a valid location from the list.");
-        }
-      }
-    
-      // Function to calculate the price based on location, check-in/out dates, and number of luggages
-      function calculatePrice(location, checkInDate, checkOutDate) {
-        // Sample pricing logic, replace with your actual pricing logic
-        var basePrice = 10; // Base price per luggage storage
-        var numLuggage = parseInt(document.getElementById("luggage").value);
-        
-        // Calculate duration of stay in days
-        var startDate = new Date(checkInDate);
-        var endDate = new Date(checkOutDate);
-        var days = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
-    
-        // You can include more complex pricing logic here, based on location, dates, etc.
-        var totalPrice = basePrice * numLuggage * days;
-    
-        return totalPrice;
-      }
-    </script>
     
   </body>
 </html>

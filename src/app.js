@@ -4,6 +4,7 @@ const exphbs= require('express-handlebars');
 const app=express();
 const hbs = require("hbs");
 
+
 require("./db/conn");
 const Register= require("./models/registers")
 const { json }= require("express");
@@ -29,6 +30,9 @@ app.get("/register",(req,res)=>{
 })
 app.get("/partner",(req,res)=>{
     res.render("partner")
+})
+app.get("/order-summary",(req,res)=>{
+    res.render("order-summary")
 })
 app.post("/register",async(req,res)=>{
     try{
@@ -72,6 +76,35 @@ app.post("/login",async(req,res)=>{
         res.status(400).send("Invalid email")
     }
 })
+// Define the price per luggage item
+const PRICE_PER_LUGGAGE = 10; // Replace with your actual price
+
+// POST route for handling the form submission
+app.post('/order-summary', (req, res) => {
+    // Extract data from the request body
+    const { location, checkInDate, checkOutDate, luggageItems } = req.body;
+
+    // Calculate the number of days between check-in and check-out dates
+    const checkIn = new Date(checkInDate);
+    const checkOut = new Date(checkOutDate);
+    const numberOfDays = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+
+    // Calculate the total price
+    const totalPrice = numberOfDays * luggageItems * PRICE_PER_LUGGAGE;
+
+    // Render the order-summary template with the data
+    res.render('order-summary', { 
+        orderSummary: {
+            location,
+            checkInDate,
+            checkOutDate,
+            luggageItems,
+        },
+        numberOfDays,
+        totalPrice
+    });
+});
+
 app.listen(port,()=>{
     console.log(`server is running at port no ${port}`)
 })
