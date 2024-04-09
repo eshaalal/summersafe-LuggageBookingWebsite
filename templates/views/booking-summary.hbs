@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Summary</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
     
     :root {
       --primary-color: #FF5733;
@@ -96,7 +96,7 @@
         rgba(44, 56, 85, 0.9),
         rgba(100, 125, 187, 0.1)
       ),
-      url("assets/payment.jpeg");
+      url("assets/safe.jpeg");
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -138,15 +138,15 @@
     .become-partner-button:hover {
       background-color: #435681; /* Set hover color */
     }
-  </style>
-  <title>SummerSafe</title>
+    </style>
 </head>
 <body>
   <nav>
     <div class="nav__logo">SummerSafe</div>
     <ul class="nav__links">
       <li class="link"><a href="/">Home</a></li>
-      <li class="link"><a href="#">Become a partner</a></li>
+      <li class="link"><a href="/partner">Become a partner</a></li>
+      <li class="link"><a href="/register">SignUp</a></li>
       <li class="link"><a href="/login">Login</a></li>
       <li class="link"><a href="#">Contact Us</a></li>
     </ul>
@@ -154,12 +154,18 @@
   <header class="section__container header__container">
     <div class="text__container">
       <div class="text__content">
-        <h1>Earn money easily</h1>
-        <p>Life is not all about parcels! How about storing luggage to increase your income effortlessly?</p>
-<button class="become-partner-button" onclick="window.location.href='/register'">Become a Partner</button>
+        <h1>Booking Summary</h1>
+        <p>Location: {{orderSummary.location}}</p>
+        <p>Check-in Date: {{orderSummary.checkInDate}}</p>
+        <p>Check-out Date: {{orderSummary.checkOutDate}}</p>
+        <p>Luggage Items: {{orderSummary.luggageItems}}</p>
+        <p>Number of Days: {{numberOfDays}}</p>
+        <p>Total Price: {{totalPrice}}</p>
+        <button class="become-partner-button">Become a Partner</button>
       </div>
     </div>
     <div class="header__image__container"></div>
   </header>
+    
 </body>
 </html>

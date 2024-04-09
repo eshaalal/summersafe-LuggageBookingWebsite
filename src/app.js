@@ -22,6 +22,7 @@ hbs.registerPartials(partials_path);
 app.get("/",(req,res)=>{
     res.render("index")
 });
+
 app.get("/login",(req,res)=>{
     res.render("login")
 })
@@ -31,7 +32,7 @@ app.get("/register",(req,res)=>{
 app.get("/partner",(req,res)=>{
     res.render("partner")
 })
-app.get("/order-summary",(req,res)=>{
+app.get("/booking-summary",(req,res)=>{
     res.render("order-summary")
 })
 app.post("/register",async(req,res)=>{
@@ -80,7 +81,7 @@ app.post("/login",async(req,res)=>{
 const PRICE_PER_LUGGAGE = 10; // Replace with your actual price
 
 // POST route for handling the form submission
-app.post('/order-summary', (req, res) => {
+app.post('/booking-summary', (req, res) => {
     // Extract data from the request body
     const { location, checkInDate, checkOutDate, luggageItems } = req.body;
 
@@ -93,7 +94,7 @@ app.post('/order-summary', (req, res) => {
     const totalPrice = numberOfDays * luggageItems * PRICE_PER_LUGGAGE;
 
     // Render the order-summary template with the data
-    res.render('order-summary', { 
+    res.render('booking-summary', { 
         orderSummary: {
             location,
             checkInDate,
@@ -104,6 +105,9 @@ app.post('/order-summary', (req, res) => {
         totalPrice
     });
 });
+
+
+
 
 app.listen(port,()=>{
     console.log(`server is running at port no ${port}`)
