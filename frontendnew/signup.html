@@ -33,7 +33,7 @@ body{
 }
 .container{
   position: absolute;
-  top: 55%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%,-50%);
   max-width: 430px;
@@ -49,7 +49,7 @@ body{
   display: none;
 }
 .container .form{
-  padding: 2rem;
+  padding: 1rem;
 }
 .form header{
   font-size: 2rem;
@@ -169,7 +169,7 @@ body{
     <div class="nav__logo">SummerSafe</div>
     <ul class="nav__links">
       <li class="link"><a href="/">Home</a></li>
-      <li class="link"><a href="/partner">Become a partner</a></li>
+      <li class="link"><a href="#">Become a partner</a></li>
       <li class="link"><a href="/login">Login</a></li>
       <li class="link"><a href="#">Contact Us</a></li>
     </ul>
@@ -177,17 +177,18 @@ body{
   <div class="container">
     <!-- <input type="checkbox" id="check"> -->
     <div class="registration form">
-        <header>Login</header>
-        <form action="/login" method="POST">
-          <input type="text" placeholder="Enter your email" name="email">
-          <input type="password" placeholder="Enter your password" name="password" maxlength="10">
-          
-          <input type="submit" class="button" value="Login">
-        </form>
-        <div class="signup">
-          <span class="signup">Don't have an account yet?
-            <a href="/register">Create an account</a>
-          </span>
+      <header>SignUp</header>
+      <form action="/register" method="POST">
+        <input type="text" placeholder="Enter your email" name="email">
+        <input type="password" placeholder="Create a password" name="password" maxlength="10">
+        <input type="password" placeholder="Confirm your password" name="confirmpassword" maxlength="10">
+        <input type="text" placeholder="Enter your mobile number" name="mobile" maxlength="10">
+        <input type="submit" class="button" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <a href="/login">Login</a>
+        </span>
       </div>
     </div>
   </div>

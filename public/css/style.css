@@ -419,5 +419,103 @@ nav {
   .book__button:hover {
     background-color:#435681; /* Darker shade for hover effect */
   }
-  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+  .intro {
+    position: relative;
+    isolation: isolate;
+    background-color: white;
+    color:#FF5733
+  }
+  
+  .intro::before {
+    position: absolute;
+    content: "";
+    right: 0;
+    height: 100%;
+    width: calc(100vw / 4);
+    background-color: var(--secondary-color);
+    z-index: -1;
+  }
+  
+  .intro__container {
+    display: grid;
+    gap: 4rem 2rem;
+    display: grid;
+  gap: 4rem 2rem;
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); 
+  border-radius: 2rem; 
 
+  }
+  
+  .intro__container .section__subheader {
+    color: var(--secondary-color);
+  }
+  
+  .intro__container :is(.section__header, .section__description) {
+    margin-bottom: 1rem;
+    color: black;
+  }
+  
+  .intro__video {
+    max-width: 450px;
+    margin: auto;
+    
+  }
+  
+  .feature__container :is(.section__subheader, .section__header) {
+    text-align: center;
+  }
+  
+  .feature__grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .feature__card span {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+  }
+  
+  .feature__card h4 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: var(--header-font);
+    counter-reset: var(--text-dark);
+  }
+  
+  .feature__card p {
+    color: var(--text-light);
+  }
+  
+  
+
+    .feature__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .intro__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+  
+    .feature__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .intro__image {
+      max-width: 450px;
+      margin: auto;
+      border-radius: 1rem; /* Added border radius */
+      overflow: hidden; /* Ensure border radius applies properly */
+      background-image: linear-gradient(to right, rgba(44, 56, 85, 0.9), rgba(100, 125, 187, 0.1)), url("assets/luggage.png"); /* Added gradient background */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+  
+    

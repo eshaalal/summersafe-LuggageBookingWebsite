@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    
+    <link rel="stylesheet" href="styles.css" >
     <title>SummerSafe</title>
   </head>
   <body>
@@ -17,9 +15,9 @@
       <div class="nav__logo">SummerSafe</div>
       <ul class="nav__links">
   <li class="link"><a href="#">Home</a></li>
-  <li class="link"><a href="#">Become a partner</a></li>
-  <li class="link"><a href="#">Blog</a></li>
-  <li class="link"><a href="#">Login</a></li>
+  <li class="link"><a href="/partner">Become a partner</a></li>
+  <li class="link"><a href="/register">SignUp</a></li>
+  <li class="link"><a href="/login">Login</a></li>
   <li class="link"><a href="#">Contact Us</a></li>
 
       </ul>
@@ -32,44 +30,45 @@
         </div>
 
       <div class="booking__container">
-        <form>
-          <div class="form__group">
-            <div class="input__group">
-              <input type="text" id="location" value="Lovely Professional University" autocomplete="off"/>
-              <label for="location"></label>
+        <form action="/booking-summary" method="POST">
+    <div class="form__group">
+        <div class="input__group">
+            <input type="text" id="location" name="location" value="Lovely Professional University" autocomplete="off" />
+            <label for="location"></label>
+        </div>
+        <p>What's your location?</p>
+    </div>
+    <div class="form__group">
+        <div class="input__group">
+            <input type="date" id="check-in" name="checkInDate" />
+            <label for="check-in"></label>
+        </div>
+        <p>Check-in date</p>
+    </div>
+    <div class="form__group">
+        <div class="input__group">
+            <input type="date" id="check-out" name="checkOutDate" />
+            <label for="check-out"></label>
+        </div>
+        <p>Check-out date</p>
+    </div>
+    <div class="form__group">
+        <div class="input__group">
+            <input type="text" id="luggage" name="luggageItems" value="1"> 
+            <label for="luggage"></label>
+        </div>
+        <p>Add luggage</p>
+    </div>
+    <button type="submit" class="btn"><i class="ri-shopping-cart-line"></i> Book Now</button>
+</form>
 
-            </div>
-            <p>What's your location?</p>
-          </div>
-          <div class="form__group">
-            <div class="input__group">
-              <input type="date" id="check-in" />
-              <label for="check-in"></label>
-            </div>
-            <p>Check-in date</p>
-          </div>
-          <div class="form__group">
-            <div class="input__group">
-              <input type="date" id="check-out" />
-              <label for="check-out"></label>
-            </div>
-            <p>check-out date</p>
-          </div>
-          <div class="form__group">
-            <div class="input__group">
-              <input type="text" id="luggage" value="1"> 
-              <label for="luggage"></label>
-            </div>
-            <p>add-luggage</p>
-          </div>
-        </form>
-        <button class="btn" onclick="bookNow()"><i class="ri-shopping-cart-line"></i> Book Now</button>
       </div>
+        
       
     </header>
 
     <section class="section__container popular__container">
-      <h2 class="section__header">Currently Available in</h2>
+      <h2 class="section__header">We are available in</h2>
       <div class="popular__grid">
         <div class="popular__card">
           <img src="assets/lovely-professional-university.jpg" alt="popular uni" />
@@ -133,26 +132,97 @@
         </div>
       </div>
     </section>
+    <section class="intro">
+      <div class="section__container intro__container">
+        <div class="intro__cotent">
+          <h2 class="section__header">Guess what we are giving you in </h2>
+          <p class="section__description">
+            Whether you're seeking a cozy and exclusive hideaway or an immersive
+            journey beneath the surface, Hotel Miranda promises to be an
+            unforgettable stay, where the depths of comfort and excitement await
+            your arrival.
+          </p>
+        </div>
+        <div class="intro__image">
+          <img src="assets/luggage.png">
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container feature__container" id="feature">
+      <p class="section__subheader">FACILITIES</p>
+      <h2 class="section__header">Core Features</h2>
+      <div class="feature__grid">
+        <div class="feature__card">
+          <span><i class="ri-thumb-up-line"></i></span>
+          <h4>Have High Rating</h4>
+          <p>
+            We take pride in curating a selection of hotels that consistently
+            receive high ratings and positive reviews.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-time-line"></i></span>
+          <h4>Quite Hours</h4>
+          <p>
+            We understand that peace and uninterrupted rest are essential for a
+            rejuvenating experience.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-map-pin-line"></i></span>
+          <h4>Best Location</h4>
+          <p>
+            At our hotel booking website, we take pride in offering
+            accommodations in the most prime and sought-after locations.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-close-circle-line"></i></span>
+          <h4>Free Cancellation</h4>
+          <p>
+            We understand that travel plans can change unexpectedly, which is
+            why we offer the flexibility of free cancellation.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-wallet-line"></i></span>
+          <h4>Payment Options</h4>
+          <p>
+            Our hotel booking website offers a range of convenient payment
+            options to suit your preferences.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-coupon-line"></i></span>
+          <h4>Special Offers</h4>
+          <p>
+            Whether you're planning a romantic getaway, or a business trip, our
+            carefully curated special offers cater to all your needs.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section class="client">
       <div class="section__container client__container">
         <h2 class="section__header">What our customers say</h2>
         <div class="client__grid">
           <div class="client__card">
-            <img src="assets/girl1.png" alt="client" />
+            <img src="assets/girl2.png" alt="client" />
             <p>
               The booking process was seamless, and the confirmation was
               instant. I highly recommend SummerSafe for hassle-free hotel bookings.
             </p>
           </div>
           <div class="client__card">
-            <img src="assets/luggage.png" alt="client" />
+            <img src="assets/girl1.png" alt="client" />
             <p>
               The website delievers exactly what it promises.It helped my enjoy my vacation without have to worry about the safety of my stuff. Highly recommended!
             </p>
           </div>
           <div class="client__card">
-            <img src="assets/girl2.png" alt="client" />
+            <img src="assets/luggage.png" alt="client" />
             <p>
               I was able to book a storage room within minutes, and the service exceeded
               my expectations. I appreciate SummerSafe's efficiency and reliability.
@@ -205,53 +275,7 @@
           <p>Partnerships</p>
         </div>
       </div>
-      <div class="footer__bar">
-        Copyright © 2023 . All rights reserved.                                              
-      </div>
-    </footer>
-    <script>
-      function bookNow() {
-        var allowedLocations = ["Lovely Professional University", "Chitkara University", "Amity University", "Thapar University", "Chandigarh University", "Galgotias University"];
-        var location = document.getElementById("location").value.trim();
-        var checkInDate = document.getElementById("check-in").value;
-        var checkOutDate = document.getElementById("check-out").value;
-        
-        if (allowedLocations.includes(location)) {
-          // Pricing logic based on location, check-in/out dates, and number of luggages
-          var price = calculatePrice(location, checkInDate, checkOutDate);
-          
-          // Display booking confirmation message with amount
-          console.log("Booking confirmed for location: " + location + ". Amount to be paid:  \u20B9" + price);
-          alert("Booking confirmed for location: " + location + ". Amount to be paid:  \u20B9" + price);
-    
-          // Remove or comment out the line below to prevent redirection
-          // window.location.href = "order_summary.html"; // Replace "order_summary.html" with the actual URL of your order summary page
-        } else {
-          // Location is not allowed, show error message
-          alert("Please enter a valid location from the list.");
-        }
-      }
-    
-      // Function to calculate the price based on location, check-in/out dates, and number of luggages
-      function calculatePrice(location, checkInDate, checkOutDate) {
-        // Sample pricing logic, replace with your actual pricing logic
-        var basePrice = 10; // Base price per luggage storage
-        var numLuggage = parseInt(document.getElementById("luggage").value);
-        
-        // Calculate duration of stay in days
-        var startDate = new Date(checkInDate);
-        var endDate = new Date(checkOutDate);
-        var days = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
-    
-        // You can include more complex pricing logic here, based on location, dates, etc.
-        var totalPrice = basePrice * numLuggage * days;
-    
-        return totalPrice;
-      }
-    </script>
-    
-
       
-      
+    </footer> 
   </body>
 </html>
