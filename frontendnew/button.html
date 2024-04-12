@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storage Capacity Calculator</title>
+<style>
+  /* Add some basic styling */
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  input[type="number"] {
+    width: 50px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <h2>Storage Capacity Calculator</h2>
+  <label for="storage">Storage Capacity (GB):</label>
+  <input type="number" id="storage" value="0">
+  <button onclick="increment('storage')">+</button>
+  <button onclick="decrement('storage')">-</button>
+  <br>
+  <button onclick="calculatePrice()">Calculate Price</button>
+  <br>
+  <p id="price"></p>
+
+  <script>
+    // Define the price per GB
+    var pricePerGB = 0.1; // Change this value as needed
+
+    function increment(inputId) {
+      // Get the input element
+      var input = document.getElementById(inputId);
+      // Increment its value
+      input.value = parseInt(input.value) + 1;
+    }
+
+    function decrement(inputId) {
+      // Get the input element
+      var input = document.getElementById(inputId);
+      // Decrement its value, but ensure it never goes below 0
+      input.value = parseInt(input.value) > 0 ? parseInt(input.value) - 1 : 0;
+    }
+
+    function calculatePrice() {
+      // Get the value of the storage input field
+      var storageCapacity = parseInt(document.getElementById('storage').value);
+      
+      // Calculate the price
+      var totalPrice = storageCapacity * pricePerGB;
+      
+      // Display the result
+      document.getElementById('price').innerText = 'Total Price: $' + totalPrice.toFixed(2);
+    }
+  </script>
+</body>
+</html>

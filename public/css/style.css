@@ -28,6 +28,16 @@
   color: var(--text-dark);
   text-align: center;
 }
+.section__description {
+  margin-top: 1rem;
+  color: var(--text-light);
+}
+.section__subheader {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
 
 a {
   text-decoration: none;
@@ -80,6 +90,7 @@ nav {
 }
 
 .header__image__container {
+  flex: 1;
   position: relative;
   min-height: 500px;
   background-image: linear-gradient(
@@ -300,12 +311,15 @@ nav {
 
 .footer {
   background-color: var(--extra-light);
+  margin-top: 40px; 
+
 }
 
 .footer__container {
   display: grid;
   grid-template-columns: 2fr repeat(3, 1fr);
   gap: 5rem;
+  padding-top: 40px; 
 }
 
 .footer__col h3 {
@@ -516,6 +530,204 @@ nav {
       background-position: center;
       background-repeat: no-repeat;
     }
+    .about {
+      position: relative;
+      isolation: isolate;
+      margin-top: -5rem;
+    }
     
-  
+    .about::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      right: 0;
+      height: 75%;
+      width: 100%;
+      background-image: url("assets/about-bg.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0.05;
+      z-index: -1;
+    }
     
+    .about__container {
+      display: grid;
+      gap: 4rem 2rem;
+      /* padding: 3rem 1rem; */
+    }
+    
+    .about__grid {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    .about__card {
+      height: 100%;
+      padding: 2rem;
+      display: grid;
+      place-content: center;
+      text-align: center;
+    }
+    
+    .about__card span {
+      margin-bottom: 1rem;
+      font-size: 3rem;
+      color: var(--secondary-color);
+    }
+    
+    .about__card h4 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: var(--header-font);
+      color: var(--text-dark);
+    }
+    
+    .about__card p {
+      color: var(--text-light);
+    }
+    
+    .about__card:nth-child(4) {
+      background-color: var(--primary-color);
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .about__card:nth-child(4) :is(h4, p) {
+      color: var(--white);
+    }
+    
+    .about__image img {
+      height: 100%;
+      object-fit: cover;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+        /* border-radius: 2rem; */
+
+    }
+    
+    .about__content .section__description {
+      margin-bottom: 2rem;
+    }
+    
+@media (width > 480px) {
+  .about__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about__image:nth-child(1) {
+    grid-area: 1/2/2/3;
+  }
+
+  .about__image:nth-child(1),
+  .about__card:nth-child(4) {
+    transform: translateY(2rem);
+  }
+
+  .feature__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu__images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu__banner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+.about::before {
+  height: 75%;
+  width: 75%;
+}
+
+.about__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+@media (width > 1024px) {
+  .about__grid {
+    gap: 2rem;
+  }
+}
+.btn{
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #FF5733; /* Set button color */
+  color: white;
+  border: none;
+  border-radius: 1rem; /* Set border radius for curvy edges */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem; /* Add margin between button and paragraph */
+}
+
+.btn:hover {
+  background-color: #435681; /* Set hover color */
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  padding-top: 47px; /* Add padding at the top of the header */
+
+}
+
+.text__container {
+  flex: 1;
+  padding-right: 2rem; /* Add spacing between text and image */
+}
+
+.head__image__container {
+  flex: 1;
+  min-height: 500px;
+  background-image: linear-gradient(
+    to right,
+    rgba(44, 56, 85, 0.9),
+    rgba(100, 125, 187, 0.1)
+  ),
+  url("payment.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+}
+.become-partner-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #FF5733; /* Set button color */
+  color: white;
+  border: none;
+  border-radius: 1rem; /* Set border radius for curvy edges */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 3rem; /* Add margin between button and paragraph */
+}
+
+.become-partner-button:hover {
+  background-color: #435681; /* Set hover color */
+}
+.text__container {
+  float: left; /* Float text to the left */
+  width: 50%;
+  padding: 2rem;
+}
+
+.text__content {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+}
+
+.text__content h1 {
+  margin-bottom: 1rem; /* Adjust spacing */
+}
+
+.text__content p {
+  margin-bottom: 1rem; /* Add margin between paragraph and button */
+}
+
+
