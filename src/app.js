@@ -51,6 +51,9 @@ app.get("/booking-summary", (req, res) => {
 app.get("/order-success",(req,res)=>{
     res.render("order-success")
 })
+app.get("/contact",(req,res)=>{
+    res.render("contact")
+});
 
 app.get("/profile", async (req, res) => {
     try {

@@ -4,23 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+        
+    :root {
+      --primary-color: #FF5733;
+      --primary-color-dark: #435681;
+      --text-dark: #333333;
+      --text-light: #767268;
+      --extra-light: #f3f4f6;
+      --white: #ffffff;
+      --max-width: 1200px;
+    }
+ 
+
+    a {
+      text-decoration: none;
+    }
+
+    
+
+    
+
+    nav {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 2rem 1rem;
+      display: flex;
+      align-items: center; /* Align items vertically */
+      justify-content: space-between;
+    }
+
+    
+
+    .nav__logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #FF5733;
+      display: inline-block; /* Ensure vertical alignment */
+    }
+
+    .nav__links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .link a {
+      font-weight: 500;
+      font-size: 18px;
+      color: var(--text-light);
+      transition: 0.3s;
+    }
+
+    .link a:hover {
+      color: var(--primary-color);
+      text-decoration: none;
+    }  
+        
+        
+        .profile-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .booking-item {
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #f3f4f6;
+            transition: transform 0.3s ease;
+        }
+        .booking-item:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            color: #FF5733;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+        h2:hover {
+    color: #435681; /* Change color on hover */
+}
+        p {
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .user-image {
+    max-width: 100%; /* Ensures the image fits within its container */
+    max-height: 100px; /* Limiting the height of the image */
+    width: auto; /* Allow the width to adjust accordingly */
+    border-radius: 5px; /* Adds rounded corners to the image */
+}
+
+
+    </style>
 </head>
 <body>
-    <h1>User Profile</h1>
-    <p>Email: {{userData.email}}</p>
-    <p>Mobile: {{userData.mobile}}</p>
-
-    <h2>Booking Details:</h2>
-    <ul>
-        {{#each bookings}}
-            <li>
-                <p>Location: {{location}}</p>
-                <p>Check-in Date: {{checkInDate}}</p>
-                <p>Check-out Date: {{checkOutDate}}</p>
-                <p>Luggage Items: {{luggageItems}}</p>
-                <p>Total Price: {{totalPrice}}</p>
-            </li>
-        {{/each}}
+    <nav>
+    <div class="nav__logo">SummerSafe</div>
+    <ul class="nav__links">
+      <li class="link"><a href="/">Home</a></li>
+      <li class="link"><a href="/partner">Become a partner</a></li>
+      <li class="link"><a href="/login">Login</a></li>
+      <li class="link"><a href="#">Contact Us</a></li>
     </ul>
+  </nav>
+    
+    <div class="container">
+        <div class="profile-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>User Information</h2>
+                    <p><strong>Email:</strong> {{userData.email}}</p>
+                    <p><strong>Mobile:</strong> {{userData.mobile}}</p>
+                </div>
+                 <div class="col-md-6 text-right"> <!-- Added text-right class -->
+                <img src="assets/booking.jpeg" alt="User Image" class="user-image"> <!-- Added class="user-image" -->
+            </div>
+                
+            </div>
+            <h2 class="mt-5">Booking Details:</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    {{#each bookings}}
+                    <div class="booking-item">
+                        <p><strong>Location:</strong> {{location}}</p>
+                        <p><strong>Check-in Date:</strong> {{checkInDate}}</p>
+                        <p><strong>Check-out Date:</strong> {{checkOutDate}}</p>
+                        <p><strong>Luggage Items:</strong> {{luggageItems}}</p>
+                        <p><strong>Total Price:</strong> {{totalPrice}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS and jQuery (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
