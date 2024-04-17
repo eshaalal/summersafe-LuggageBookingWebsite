@@ -154,6 +154,8 @@
   <header class="section__container header__container">
     <div class="text__container">
       <div class="text__content">
+        <form action="/checkout" method="POST">
+
         <h1>Booking Summary</h1>
         <p>Location: {{orderSummary.location}}</p>
         <p>Check-in Date: {{orderSummary.checkInDate}}</p>
@@ -161,7 +163,8 @@
         <p>Luggage Items: {{orderSummary.luggageItems}}</p>
         <p>Number of Days: {{numberOfDays}}</p>
         <p>Total Price: {{totalPrice}}</p>
-        <button class="become-partner-button">Become a Partner</button>
+        <button type="submit" class="become-partner-button">CheckOut</button>
+        </form>
       </div>
     </div>
     <div class="header__image__container"></div>

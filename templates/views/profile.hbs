@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <p>Email: {{userData.email}}</p>
+    <p>Mobile: {{userData.mobile}}</p>
+
+    <h2>Booking Details:</h2>
+    <ul>
+        {{#each bookings}}
+            <li>
+                <p>Location: {{location}}</p>
+                <p>Check-in Date: {{checkInDate}}</p>
+                <p>Check-out Date: {{checkOutDate}}</p>
+                <p>Luggage Items: {{luggageItems}}</p>
+                <p>Total Price: {{totalPrice}}</p>
+            </li>
+        {{/each}}
+    </ul>
+</body>
+</html>

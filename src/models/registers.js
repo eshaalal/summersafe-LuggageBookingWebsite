@@ -18,7 +18,9 @@ const schema = new mongoose.Schema({
         type:Number,
         required:true,
         unique:true
-    }
+    },
+    bookings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Booking' }] // Reference to booking documents
+
 })
 const Register = new mongoose.model("Register",schema);
 module.exports= Register;
