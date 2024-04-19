@@ -108,6 +108,7 @@
     }
     .text__content h1 {
   margin-bottom: 2rem; /* Increase the margin-bottom to desired value */
+  color:#FF5733;
 }
 
     </style>
@@ -143,12 +144,18 @@
           <label for="totalPrice">Total Price:</label>
           <input type="text" id="totalPrice" name="totalPrice" value="{{totalPrice}}" readonly>
         </div>
-        <button type="submit" class="become-partner-button">click to proceed!</button>
+        <button type="submit" class="become-partner-button" onclick="confirmBooking()">click to proceed!</button>
       </form>
     </div>
   </div>
   <div class="header__image__container"></div>
 </header>
+<script>
+  function confirmBooking() {
+    if (confirm("Are you sure you want to proceed with the booking?")) {
+    }
+  }
+</script>
 
 </body> 
 </html>

@@ -4,12 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Successful</title>
-    <!-- Add any necessary styles or scripts here -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Kristi", cursive;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        .main_header {
+            width: 100vw;
+            height: 100vh;
+            background-color: hsl(0, 0%, 94%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center_div {
+            color: #000;
+            font-size: 7rem;
+            text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 35%;
+            }
+        }
+        h1 {
+      color: #FF5733;
+      font-size: 4.5rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 20px;
+      color: #333;
+    }
+    .btn-primary {
+      background-color: #FF5733;
+      border-color: #FF5733;
+      padding: 15px 30px;
+      font-size: 1.5rem;
+    }
+    .btn-primary:hover {
+      background-color: #435681;
+      border-color: #435681;
+    }
+    </style>
+
 </head>
 <body>
-    <h1>Order Successful!</h1>
-    <p>Thank you for your booking. Your order has been successfully placed.</p>
-    <!-- You can add more information or actions here as needed -->
-    <a href="/">main page</a>
+    <div class="main_header">
+        <div class="center_div">
+            <div class="container">
+  <div class="ribbon"></div>
+  <div class="party-bomber"></div>
+  <h1>Booking Successful!</h1>
+  <p>Your booking has been confirmed.</p>
+  <p>Thank you for choosing our service.</p>
+  <a href="/profile" class="btn btn-primary">Go to Profile</a>
+</div>
+        </div>
+    </div>
+
+    <!-- Include confetti-js library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
+
+    <!-- Script to trigger confetti animation -->
+    <script>
+        // Function to start the confetti effect
+        function startConfetti() {
+            var duration = 5 * 1000; // 5 seconds
+            var animationEnd = Date.now() + duration;
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            // Confetti settings
+            var interval = setInterval(function () {
+                var timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                var particleCount = 50 * (timeLeft / duration);
+                // Since particles fall down, start a bit higher than random
+                confetti({
+                    particleCount: particleCount,
+                    spread: 160,
+                    origin: { x: 0.5, y: 0.2 }
+                });
+            }, 250);
+        }
+
+        // Call the confetti function after the page has fully loaded
+        window.onload = function () {
+            startConfetti();
+        };
+    </script>
 </body>
 </html>
