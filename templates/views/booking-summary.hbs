@@ -36,77 +36,17 @@
       font-family: "Poppins", sans-serif;
     }
 
-    nav {
-      max-width: var(--max-width);
-      margin: auto;
-      padding: 2rem 1rem;
-      display: flex;
-      align-items: center; /* Align items vertically */
-      justify-content: space-between;
-    }
-
     .section__container {
       max-width: var(--max-width);
       margin: auto;
       padding: 5rem 1rem;
-    }
-
-    .section__header {
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      text-align: center;
-    }
-
-    .nav__logo {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #FF5733;
-      display: inline-block; /* Ensure vertical alignment */
-    }
-
-    .nav__links {
-      list-style: none;
       display: flex;
       align-items: center;
-      gap: 2rem;
-    }
-
-    .link a {
-      font-weight: 500;
-      color: var(--text-light);
-      transition: 0.3s;
-    }
-
-    .link a:hover {
-      color: var(--primary-color);
-    }
-
-    .header__container {
-      padding: 1rem 1rem 5rem 1rem;
-    }
-
-    .header__image__container {
-      position: relative;
-      min-height: 500px;
-      float: right; /* Float image to the right */
-      width: 50%;
-      background-image: linear-gradient(
-        to right,
-        rgba(44, 56, 85, 0.9),
-        rgba(100, 125, 187, 0.1)
-      ),
-      url("assets/safe.jpeg");
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border-radius: 2rem;
+      justify-content: space-between;
     }
 
     .text__container {
-      float: left; /* Float text to the left */
-      width: 50%;
-      padding: 2rem;
+      width: 45%;
     }
 
     .text__content {
@@ -114,61 +54,101 @@
       color: var(--text-dark);
     }
 
-    .text__content h1 {
-      margin-bottom: 1rem; /* Adjust spacing */
+    .form-group {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
     }
 
-    .text__content p {
-      margin-bottom: 1rem; /* Add margin between paragraph and button */
+    label {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      width: 40%; /* Adjust label width */
+    }
+
+    input[type="text"] {
+      flex: 1; /* Take remaining space */
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--primary-color);
     }
 
     .become-partner-button {
-      display: inline-block;
+      display: block;
       padding: 0.75rem 1.5rem;
-      background-color: #FF5733; /* Set button color */
+      background-color: #FF5733;
       color: white;
       border: none;
-      border-radius: 1rem; /* Set border radius for curvy edges */
+      border-radius: 1rem;
       font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      margin-top: 1rem; /* Add margin between button and paragraph */
+      margin-top: 1rem;
     }
 
     .become-partner-button:hover {
-      background-color: #435681; /* Set hover color */
+      background-color: #435681;
     }
+
+    .header__image__container {
+      min-height: 500px;
+      width: 45%;
+      background-image: url("assets/bookings.jpg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 2rem;
+    }
+    .text__content h1 {
+  margin-bottom: 2rem; /* Increase the margin-bottom to desired value */
+}
+
     </style>
 </head>
 <body>
-  <nav>
-    <div class="nav__logo">SummerSafe</div>
-    <ul class="nav__links">
-      <li class="link"><a href="/">Home</a></li>
-      <li class="link"><a href="/partner">Become a partner</a></li>
-      <li class="link"><a href="/register">SignUp</a></li>
-      <li class="link"><a href="/login">Login</a></li>
-      <li class="link"><a href="#">Contact Us</a></li>
-    </ul>
-  </nav>
+  
   <header class="section__container header__container">
-    <div class="text__container">
-      <div class="text__content">
-        <form action="/checkout" method="POST">
-
+  <div class="text__container">
+    <div class="text__content">
+      <form action="/checkout" method="POST">
         <h1>Booking Summary</h1>
-        <p>Location: {{orderSummary.location}}</p>
-        <p>Check-in Date: {{orderSummary.checkInDate}}</p>
-        <p>Check-out Date: {{orderSummary.checkOutDate}}</p>
-        <p>Luggage Items: {{orderSummary.luggageItems}}</p>
-        <p>Number of Days: {{numberOfDays}}</p>
-        <p>Total Price: {{totalPrice}}</p>
-        <button type="submit" class="become-partner-button">CheckOut</button>
-        </form>
-      </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" value="{{orderSummary.location}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="checkInDate">Check-in Date:</label>
+          <input type="text" id="checkInDate" name="checkInDate" value="{{orderSummary.checkInDate}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="checkOutDate">Check-out Date:</label>
+          <input type="text" id="checkOutDate" name="checkOutDate" value="{{orderSummary.checkOutDate}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="luggageItems">Luggage Items:</label>
+          <input type="text" id="luggageItems" name="luggageItems" value="{{orderSummary.luggageItems}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="numberOfDays">Number of Days:</label>
+          <input type="text" id="numberOfDays" name="numberOfDays" value="{{numberOfDays}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="totalPrice">Total Price:</label>
+          <input type="text" id="totalPrice" name="totalPrice" value="{{totalPrice}}" readonly>
+        </div>
+        <button type="submit" class="become-partner-button">click to proceed!</button>
+      </form>
     </div>
-    <div class="header__image__container"></div>
-  </header>
-    
-</body>
+  </div>
+  <div class="header__image__container"></div>
+</header>
+
+</body> 
 </html>

@@ -54,6 +54,9 @@ app.get("/order-success",(req,res)=>{
 app.get("/contact",(req,res)=>{
     res.render("contact")
 });
+app.get("/lender",(req,res)=>{
+    res.render("lender")
+});
 
 app.get("/profile", async (req, res) => {
     try {
