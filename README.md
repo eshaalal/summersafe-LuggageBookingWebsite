@@ -30,7 +30,7 @@ SummerSafe aims to address the needs of students who require temporary luggage s
 SummerSafe is built using the following technologies:
 
 ### Frontend:
-- Handlebars (HBS) <img src="https://img.icons8.com/color/48/000000/handlebars.png" alt="Handlebars" style="vertical-align:middle">
+- Handlebars (HBS) <img src="https://img.icons8.com/?size=48&id=0AnXNSSQ3wKp&format=png" style="vertical-align:middle">
 - CSS <img src="https://img.icons8.com/ultraviolet/40/000000/css.png" alt="CSS" style="vertical-align:middle">
 - JavaScript <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" style="vertical-align:middle">
 
@@ -46,7 +46,7 @@ To install SummerSafe locally, follow these steps:
 ### Prerequisites
 - Node.js installed
 
-1. Clone the repository: `git clone https://github.com/yourusername/summersafe.git`
+1. Clone the repository: `git clone https://github.com/eshaalal/summersafe-LuggageBookingWebsite.git`
 2. Navigate to the project directory: Navigate to `src` folder and run `app.js`
 3. Install dependencies: Run `npm install` to install dependencies.
    
