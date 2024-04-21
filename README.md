@@ -21,8 +21,6 @@ SummerSafe aims to address the needs of students who require temporary luggage s
 
 - **Space Rental for Locals:** Locals can list their available space for luggage storage and set competitive prices to attract students.
 
-- **Secure Transactions:** The platform ensures secure transactions between students and locals, providing peace of mind to both parties.
-
 - **Rating and Reviews:** Users can leave ratings and reviews, helping to establish trust within the community.
 
 ## Technologies Used
