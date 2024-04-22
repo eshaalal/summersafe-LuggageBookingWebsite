@@ -7,7 +7,6 @@ const Booking = require("./models/booking"); // Require the booking model
 
 const app = express();
 const hbs = require("hbs");
-
 require("./db/conn");
 
 const port = process.env.PORT || 3000;
@@ -144,7 +143,7 @@ app.post("/login", async (req, res) => {
 
 
 // Define the price per luggage item
-const PRICE_PER_LUGGAGE = 10; // Replace with your actual price
+const PRICE_PER_LUGGAGE = 10; 
 
 // POST route for handling the form submission
 app.post('/booking-summary', async (req, res) => {
