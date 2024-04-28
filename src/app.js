@@ -4,7 +4,6 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const Register = require("./models/registers");
 const Booking = require("./models/booking"); // Require the booking model
-
 const app = express();
 const hbs = require("hbs");
 require("./db/conn");
@@ -17,6 +16,7 @@ const partials_path = path.join(__dirname, "../templates/partials");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(static_path));
+
 
 app.use(session({
     secret: 'your-secret-key',
@@ -69,8 +69,6 @@ app.get("/profile", async (req, res) => {
             return res.status(404).send("User not found");
         }
         const bookings = await Booking.find({ userEmail: userEmail });
-
-
         // Render profile page with user data
         res.render("profile", { userData: user,bookings:bookings });
     } catch (error) {
