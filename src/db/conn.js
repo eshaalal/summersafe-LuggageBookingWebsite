@@ -4,5 +4,5 @@ mongoose.connect("mongodb+srv://eshalal9693:AlbyU3ixIjPbA3r1@summersafe.fmsgu57.
 }).then(()=>{
     console.log(`connection successful`);
 }).catch((e)=>{
-    console.log(`no connection`);
+    console.log(`no connection happend`);
 })
